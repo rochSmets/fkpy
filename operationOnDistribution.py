@@ -88,7 +88,8 @@ class Populations():
         xp, yp = meshgrid(xx, yy)
 
         val = self.distrib(xp, yp)
-        val = np.clip(val, np.finfo(np.float).eps, np.inf)
+        # val = np.clip(val, np.finfo(np.float).eps, np.inf)
+        val = np.clip(val, np.finfo(float).eps, np.inf)
 
         zz = np.log(val)
         #zz = np.add(zz, -np.max(zz))
